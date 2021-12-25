@@ -1,41 +1,44 @@
 import {
-  fatchBriefPerYearRequest,
-  fatchBriefPerYearSuccess,
-  fatchBriefPerYearError,
-} from './chosenMonth-action';
+  fatchIncomeBriefPerYearRequest,
+  fatchIncomeBriefPerYearSuccess,
+  fatchIncomeBriefPerYearError,
+  fatchExpenseBriefPerYearRequest,
+  fatchExpenseBriefPerYearSuccess,
+  fatchExpenseBriefPerYearError
+} from './brief-action';
 import moment from 'moment';
 import axios from 'axios';
 
 const fatchTransactionsPerYear = ()=> async dispatch => {
-    dispatch(fatchBriefPerYearRequest());
+  dispatch(fatchIncomeBriefPerYearRequest());
+  dispatch(fatchExpenseBriefPerYearRequest());
     const date = new Date()
-    const month = moment(date).format('YYYY');
+  const year = moment(date).format('YYYY');
   try {
     const expenseData = await axios.get(`/expense`, {
       params: {
         category: '',
-        month,
-        year: '',
+        month: '',
+        year,
       },
     });
     const incomeData = await axios.get(`/income`, {
       params: {
-        category: '',
-        month,
-        year: '',
-      },
+        ategory: '',
+        month: '',
+        year,
+      }
     });
-    console.log(expenseData);
-    dispatch(fatchExpensePerMonthSuccess(expenseData.data));
-    dispatch(fatchIncomePerMonthSuccess(incomeData.data));
+    dispatch(fatchIncomeBriefPerYearSuccess(expenseData.data));
+    dispatch(fatchExpenseBriefPerYearSuccess(incomeData.data));
   } catch (error) {
-    dispatch(fatchExpensePerMonthError(error));
-    dispatch(fatchIncomePerMonthError(error));
+    dispatch(fatchIncomeBriefPerYearError(error));
+    dispatch(fatchExpenseBriefPerYearError(error));
   }
 };
 
-const operati = {
-  fatchTransactionsPerMonth,
+const operation = {
+  fatchTransactionsPerYear,
 };
 
-export default operati;
+export default operation;

@@ -1,49 +1,39 @@
 import { combineReducers } from "redux";
 import { createReducer } from "@reduxjs/toolkit";
 import {
-    incrementMonth,
-    decrementMonth,
-    fatchExpensePerMonthRequest,
-    fatchExpensePerMonthSuccess,
-    fatchExpensePerMonthError,
-    fatchIncomePerMonthRequest,
-    fatchIncomePerMonthSuccess,
-    fatchIncomePerMonthError
-
-    
-} from './chosenMonth-action';
+  fatchIncomeBriefPerYearRequest,
+  fatchIncomeBriefPerYearSuccess,
+  fatchIncomeBriefPerYearError,
+  fatchExpenseBriefPerYearRequest,
+  fatchExpenseBriefPerYearSuccess,
+  fatchExpenseBriefPerYearError
+} from './brief-action';
 
 
 
 const isLoading = createReducer(false, {
-  [fatchExpensePerMonthRequest]: () => true,
-  [fatchExpensePerMonthSuccess]: () => false,
-  [fatchExpensePerMonthError]: () => false,
-  [fatchIncomePerMonthRequest]: () => true,
-  [fatchIncomePerMonthSuccess]: () => false,
-  [fatchIncomePerMonthError]: () => false,
-});
-const datenow = Date.now()
-const monthValue = createReducer(`${datenow}`, {
-    [incrementMonth]: (_, { payload }) => payload.nextMonthToState,
-    [decrementMonth]: (_, { payload }) => payload.nextMonthToState,
+  [fatchIncomeBriefPerYearRequest]: () => true,
+  [fatchIncomeBriefPerYearSuccess]: () => false,
+  [fatchIncomeBriefPerYearError]: () => false,
+  [fatchExpenseBriefPerYearRequest]: () => true,
+  [fatchExpenseBriefPerYearSuccess]: () => false,
+  [fatchExpenseBriefPerYearError]: () => false,
 });
 
-const exponsePerMonthReducer = createReducer([], {
-  [fatchExpensePerMonthSuccess]: (_, { payload }) => payload,
+const expensePerYrarReducer = createReducer([], {
+  [fatchIncomeBriefPerYearSuccess]: (_, { payload }) => payload,
 });
 
-const incomePerMonthReducer = createReducer([], {
-  [fatchIncomePerMonthSuccess]: (_, { payload }) => payload,
+const incomePerYearReducer = createReducer([], {
+  [fatchExpenseBriefPerYearSuccess]: (_, { payload }) => payload,
 });
 
 
 const error = createReducer(null, {});
 
 export default combineReducers({
-    desiredMonth: monthValue,
-    ExponsePerDesiredMonth: exponsePerMonthReducer,
-    IncomePerDesiredMonth: incomePerMonthReducer,
+    ExpensePerYear: expensePerYrarReducer,
+    IncomePerYear: incomePerYearReducer,
     isLoading,
     error,
 });
