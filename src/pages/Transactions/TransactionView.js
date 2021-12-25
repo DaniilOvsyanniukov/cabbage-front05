@@ -1,8 +1,9 @@
-// import React, { useState } from 'react';
 import Tabs from '../../components/IncomeAndExpenses/Tabs';
 import Balance from '../../components/Balance';
 import ToReportsBtn from '../../components/ToReportsBtn';
-// import s from './TransactionView.module.css';
+import Brief from '../../components/Brief'
+
+
 
 export default function TransactionView() {
   return (
@@ -10,6 +11,7 @@ export default function TransactionView() {
       <Balance />
       <ToReportsBtn />
       <Tabs />
+      <Brief />
     </>
   );
 }
