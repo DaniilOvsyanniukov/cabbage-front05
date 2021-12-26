@@ -9,6 +9,43 @@ import {
 import moment from 'moment';
 import axios from 'axios';
 
+function sortedData(dataperYear) {
+  if (dataperYear=== undefined || dataperYear.length === 0){return}
+  let sorted = [];
+  dataperYear.forEach(transactions => {
+
+    const findMonth = sorted.find((month, index, array) => {
+      if (month.month === transactions.month) {
+        return true
+      } else {
+        return false
+      }
+    })
+
+    if (findMonth === undefined) {
+        const newMonth = new Object();
+        newMonth.month = transactions.month;
+        newMonth.sum = transactions.sum;
+        sorted.push(newMonth)
+    } else {
+      const index = sorted.findIndex((month) => {
+           if (month.month === transactions.month) {
+        return true
+      } else {
+        return false
+        }
+      })
+        const editToMonth = new Object();
+        editToMonth.month = transactions.month;
+        editToMonth.sum = Number(transactions.sum) + Number(findMonth.sum);
+        sorted.splice(index, 1, editToMonth)
+
+    }
+
+  });
+  return sorted
+}
+
 const fatchTransactionsPerYear = ()=> async dispatch => {
   dispatch(fatchIncomeBriefPerYearRequest());
   dispatch(fatchExpenseBriefPerYearRequest());
@@ -29,8 +66,12 @@ const fatchTransactionsPerYear = ()=> async dispatch => {
         year,
       }
     });
-    dispatch(fatchIncomeBriefPerYearSuccess(expenseData.data));
-    dispatch(fatchExpenseBriefPerYearSuccess(incomeData.data));
+    const sortedExpense = sortedData(expenseData.data);
+    const sortedIncome = sortedData(incomeData.data);
+    console.log(sortedExpense)
+    console.log(sortedIncome)
+    dispatch(fatchIncomeBriefPerYearSuccess(sortedExpense));
+    dispatch(fatchExpenseBriefPerYearSuccess(sortedIncome));
   } catch (error) {
     dispatch(fatchIncomeBriefPerYearError(error));
     dispatch(fatchExpenseBriefPerYearError(error));
