@@ -34,7 +34,6 @@ function App() {
         <AppBar></AppBar>
         {isLoggedIn ? <UserMenu /> : null}
       </header>
-      {/* <Background> */}
       <Container>
         <Suspense fallback={<div>Downloading...</div>}>
           <Routes>
@@ -77,7 +76,6 @@ function App() {
           </Routes>
         </Suspense>
       </Container>
-      {/* </Background> */}
     </>
   );
 
