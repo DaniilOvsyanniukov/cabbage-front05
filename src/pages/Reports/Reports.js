@@ -13,7 +13,7 @@ const Reports = () => {
         <Balance />
         <ChosenMonth />
       </div>
-      <ExponsesAndIncome/>
+      <ExponsesAndIncome />
       <ReportsCategories />
     </div>
   );

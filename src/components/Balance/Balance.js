@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+import paths from '../../config/paths';
 import axios from 'axios';
 
 import s from './Balance.module.css';
@@ -17,11 +19,13 @@ const token = {
   },
 };
 
-const Balance = ({ hide, mobile }) => {
+const Balance = ({ mobile }) => {
+  const location = useLocation();
+
   const balance = useSelector(authSelectors.getBalance);
 
   const setToken = useSelector(authSelectors.getToken);
- 
+
   const dispatch = useDispatch();
 
   const [sum, setSum] = useState('');
@@ -32,9 +36,8 @@ const Balance = ({ hide, mobile }) => {
   };
 
   useEffect(() => {
-    token.set(setToken)
-     dispatch(authOperations.getBalance());
-
+    token.set(setToken);
+    dispatch(authOperations.getBalance());
   }, [dispatch]);
 
   useEffect(() => {
@@ -48,7 +51,12 @@ const Balance = ({ hide, mobile }) => {
     dispatch(authOperations.setBalance(sum));
   };
   return (
-    <form onSubmit={handleSubmitForm} className={s.reportBalance}>
+    <form
+      onSubmit={handleSubmitForm}
+      className={`${s.reportBalance} ${
+        location.pathname === paths.reports && `${s.reportBalancePage}`
+      }`}
+    >
       <label htmlFor="balans" className={s.balanceLabel}>
         Баланс:
         <div className={s.buttonsGroup}>
@@ -89,7 +97,12 @@ const Balance = ({ hide, mobile }) => {
               >
                 {`${balance.toLocaleString('ru')}.00`} UAH
               </p>
-              <button className={`${s.balanceButton} ${hide}`} disabled>
+              <button
+                className={`${s.balanceButton} ${
+                  location.pathname === paths.reports && `${s.visuallyHidden}`
+                }`}
+                disabled
+              >
                 ПОДТВЕРДИТЬ
               </button>
             </>

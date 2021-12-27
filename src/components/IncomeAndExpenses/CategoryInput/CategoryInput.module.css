@@ -7,6 +7,7 @@
   border-bottom: 1px solid #f5f6fb;
   border-radius: 16px 0px 0px 0px;
   outline: none;
+  /* background: #ffffff; */
 }
 
 @media screen and (min-width: 768px) {

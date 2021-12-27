@@ -6,7 +6,6 @@ import Loader from 'react-js-loader';
 import s from './TransactionsList.module.css';
 
 const TransactionsList = ({ income, transactions, onDelete }) => {
-  console.log('transactions', transactions);
   const isLoading = useSelector(transactionsSelectors.getIsLoading);
   return (
     <div className={s.tableDeskWrapper}>

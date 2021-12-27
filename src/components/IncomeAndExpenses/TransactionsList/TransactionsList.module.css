@@ -4,6 +4,7 @@
   }
 
   .table {
+    box-sizing: border-box;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -28,28 +29,29 @@
     align-items: center;
     text-transform: uppercase;
     color: #000;
-    padding-right: 84px;
-    padding-left: 20px;
   }
 
   .tableTransThDate {
     padding-left: 21px;
-    width: 146px;
+    width: 125px;
     display: flex;
   }
   .tableTransThProduct {
     display: flex;
-    width: 209px;
+    width: 168px;
+    text-align: left;
   }
 
   .tableTransThCategory {
-    width: 119px;
+    width: 124px;
+    text-align: center;
   }
 
   .tableTransThCost {
-    width: 169px;
+    width: 188px;
     display: flex;
     justify-content: flex-end;
+    padding-right: 84px;
   }
 
   .tableTr {
@@ -65,6 +67,7 @@
     border-collapse: collapse;
     width: 100%;
     border: 2px solid #f5f6fb;
+    border-right-width: 0px;
     overflow-y: scroll;
   }
 
@@ -88,24 +91,26 @@
     width: 760px;
   }
 
-  .tableHeadTr {
+  /* .tableHeadTr {
     padding-right: 136px;
-    /* padding-right: 136px; */
-  }
+  } */
 
   .tableTransThDate {
-    width: 150px;
+    width: 124px;
+    padding-left: 20px;
   }
 
   .tableTransThProduct {
-    width: 225px;
+    width: 204px;
   }
 
   .tableTransThCategory {
-    width: 150px;
+    width: 172px;
   }
+
   .tableTransThCost {
-    width: 146px;
+    width: 260px;
+    padding-right: 136px;
   }
 }
 

@@ -21,17 +21,21 @@
   .transactionsContainer {
     align-items: stretch;
     padding-top: 40px;
-    padding-left: 50px;
-    padding-right: 50px;
-    width: 768px;
+    padding-left: 51px;
+    padding-right: 51px;
+    min-width: 768px;
+  }
+
+  .balanceContainer {
+    margin-bottom: 58px;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .transactionsContainer {
-    width: 1260px;
-    padding-left: 100px;
-    padding-right: 100px;
+    width: 1060px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
   .balanceContainer {
@@ -39,5 +43,6 @@
     justify-content: flex-end;
     align-items: baseline;
     width: 1060px;
+    margin-bottom: 9px;
   }
 }

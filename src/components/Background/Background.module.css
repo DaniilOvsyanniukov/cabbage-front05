@@ -1,0 +1,88 @@
+/*-------------------------стили для приватных роутов ---------------------------*/
+.background {
+  height: 342px;
+  border-bottom-left-radius: 200px;
+  box-shadow: 4px 0px 4px 0px #00000025;
+  background: #f2f5fc;
+  width: 100%;
+  /* margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+  background-image: url(../../images/background/background-m.png);
+  background-size: 320px 342px;
+  background-repeat: no-repeat;
+  background-position: top center; */
+}
+/* -----------------------------------tablet----------------------------------- */
+@media screen and (min-width: 768px) {
+  .background {
+    /* background-image: url(../../images/background/background-t.png);
+    padding: 0 50px;
+
+    background-size: 768px, 183px;
+    background-position: top center; */
+
+    height: 583px;
+    /* border-bottom-left-radius: 200px;
+    box-shadow: 4px 0px 4px 0px #00000025;
+    background: #f2f5fc; */
+  }
+  .coles {
+    padding-top: 215px;
+    background-repeat: no-repeat;
+    background-size: 183px, 142px;
+    background-image: url(../../images/background/double\ cole.png);
+    background-position: bottom 64px right 88px;
+  }
+}
+/* -----------------------------------------desktop----------------------------- */
+@media screen and (min-width: 1280px) {
+  /* .background {
+    background-image: url(../../images/background/background-d.png);
+    background-size: 1280px, 52px;
+    background-position: top center;
+  } */
+
+    padding: 0 110px;
+  }
+  .coles {
+    /* padding-top: 335px; */
+    padding-top: 900px;
+    background-size: 1280px, 232px;
+    background-image: url(../../images/background/many\ coles.png);
+    background-position: top center;
+  }
+
+}
+
+/*-------------------------стили для публичных роутов ---------------------------*/
+/* .backgroundAuth {
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url(../../images/background/background-m.png);
+  background-size: 84px, 86px, 320px;
+  background-repeat: no-repeat;
+  background-position: right -20px top 104px, left 6px bottom 6px, top 0 center;
+}
+
+@media screen and (min-width: 768px) {
+  .backgroundAuth {
+    max-width: 768px;
+    background-image: url(../../images/background/background-t.png);
+    background-size: 1200px, 768px, 183px;
+    background-position: top 20px left 10px, top 0 left 0,
+      left 100px bottom 56px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .backgroundAuth {
+    max-width: 1280px;
+    min-height: 920px;
+    background-image: url(../../images/background/background-d.png);
+    background-size: 1280px, 1280px, 183px;
+    background-position: top 20px left 10px, top 0 left 0,
+      left 100px bottom 56px;
+  }
+} */

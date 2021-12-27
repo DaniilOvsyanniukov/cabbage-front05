@@ -1,8 +1,11 @@
 @media screen and (min-width: 320px) {
   .reportBalance {
+    position: absolute;
     display: table-footer-group;
+    left: 50%;
     font-size: 12px;
     color: rgba(82, 85, 95, 0.7);
+    transform: translate(-50%);
   }
 
   .balanceLabel {
@@ -62,8 +65,8 @@
 
 @media screen and (min-width: 768px) {
   .reportBalance {
-    display: flex;
-    margin-right: auto;
+    left: 82px;
+    transform: translate(0);
   }
 
   .balanceLabel {
@@ -108,9 +111,23 @@
   .buttonsGroup {
     margin-top: 0px;
   }
+
+  .visuallyHidden {
+    display: none;
+  }
+
+  .reportBalancePage {
+    left: 50%;
+    transform: translate(-50%);
+  }
 }
 
 @media screen and (min-width: 1280px) {
+  .reportBalance {
+    left: 50%;
+    transform: translate(-50%);
+  }
+
   .balanceLabel {
     display: flex;
     align-items: baseline;
@@ -144,6 +161,10 @@
     margin-left: 0px;
   }
   .buttonNun {
+    display: block;
+  }
+
+  .visuallyHidden {
     display: block;
   }
 }

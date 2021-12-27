@@ -1,4 +1,5 @@
 .link {
+  position: relative;
   display: inline-flex;
   text-decoration: none;
   align-items: center;

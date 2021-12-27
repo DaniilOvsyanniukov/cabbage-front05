@@ -1,0 +1,25 @@
+@media screen and (min-width: 768px) {
+  .balanceComponent {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    position: relative;
+    /* min-width: 768px; */
+    height: 44px;
+    /* padding-top: 40px; */
+    margin-bottom: 58px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .balanceComponent {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    position: relative;
+    /* width: 1060px; */
+    height: 44px;
+    /* padding-top: 40px; */
+    margin-bottom: 8px;
+  }
+}

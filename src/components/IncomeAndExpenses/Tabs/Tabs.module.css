@@ -3,19 +3,28 @@
 }
 
 @media screen and (min-width: 768px) {
+  .counterTabContainer {
+    padding-top: 28px;
+  }
+
   .tabsContainer {
     display: block;
   }
 
   .counterTabContainer {
     padding: 30px 30px 48px 30px;
-    /* outline: 1px solid black; */
+    background-color: #ffffff;
+    border-radius: 0px 30px 30px 30px;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .counterTabContainer {
-    padding: 33px 20px 60px 20px;
+    padding-top: 33px;
+  }
+
+  .tabsContainer {
+    padding-bottom: 60px;
   }
 }
 
